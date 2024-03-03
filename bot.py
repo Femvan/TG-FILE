@@ -4,7 +4,7 @@ import os
 import asyncio
 import traceback
 from aiohttp import web
-from plugins import web_server
+from handlers import web_server
 
 
 from binascii import (
