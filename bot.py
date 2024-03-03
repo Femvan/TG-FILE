@@ -476,7 +476,6 @@ async def button(bot: Client, cmd: CallbackQuery):
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, PORT).start()
-    await idle()
 
 
 app = Bot.run()
