@@ -478,4 +478,5 @@ async def button(bot: Client, cmd: CallbackQuery):
     await web.TCPSite(app, bind_address, PORT).start()
 
 
-app = Bot.run()
+app = Bot()
+app.run()
