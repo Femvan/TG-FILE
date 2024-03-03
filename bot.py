@@ -3,6 +3,10 @@
 import os
 import asyncio
 import traceback
+from aiohttp import web
+from plugins import web_server
+
+
 from binascii import (
     Error
 )
@@ -38,6 +42,7 @@ from handlers.save_media import (
     save_batch_media_in_channel
 )
 
+PORT = "8080"
 MediaList = {}
 
 Bot = Client(
@@ -48,6 +53,10 @@ Bot = Client(
     api_hash=Config.API_HASH
 )
 
+app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
 
 @Bot.on_message(filters.private)
 async def _(bot: Client, cmd: Message):
