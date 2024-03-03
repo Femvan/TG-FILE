@@ -477,4 +477,4 @@ async def button(bot: Client, cmd: CallbackQuery):
     except QueryIdInvalid: pass
 
 
-Bot.run()
+app = Bot.run()
