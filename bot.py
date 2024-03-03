@@ -474,7 +474,7 @@ async def button(bot: Client, cmd: CallbackQuery):
 
 if ON_HEROKU:
         asyncio.create_task(ping_server())
-    me = await Bot.get_me()
+    me = await Bot.run()
     Bot.username = '@' + me.username
     app = web.AppRunner(await web_server())
     await app.setup()
