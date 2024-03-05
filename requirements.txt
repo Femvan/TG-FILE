@@ -6,13 +6,6 @@ dnspython
 psutil
 render
 requests
-
-Pyrogram
-TgCrypto
-motor==2.5.1
-aiofiles
-dnspython
-psutil
 Flask==2.2.2
 gunicorn==20.1.0
 aiohttp
